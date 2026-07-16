@@ -1,0 +1,547 @@
+/* ============================================
+   Kahiga Butchery — Design Tokens
+   Subject: a real working stall in City Market,
+   Nairobi. Palette and marks draw from butcher
+   paper, stamped crate tags, chalk boards and
+   market produce stencils — not steakhouse cliché.
+   ============================================ */
+
+:root{
+    --ink:        #14171a;   /* cool near-black, modern neutral */
+    --paper:      #f4f6f7;   /* cool off-white, not warm cream */
+    --paper-dim:  #e9edee;
+    --meat:       #b8392b;   /* dulled stamp-red, not fire-engine */
+    --meat-dark:  #8f2c20;
+    --market:     #4f7268;   /* cooled-down crate-stencil green */
+    --brass:      #d4a843;   /* scale-weight gold, used sparingly */
+    --bright:     #ff6b35;   /* saturated accent, used only for the nav CTA */
+    --bright-dark:#e0531f;
+    --line:       rgba(20,23,26,0.10);
+
+    --font-display:'Sora', sans-serif;
+    --font-body:   'Inter', sans-serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+}
+
+a{ color:inherit; }
+
+@media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; animation:none !important; }
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:var(--ink);
+    color:var(--paper);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 6%;
+    z-index:1000;
+    border-bottom:1px solid rgba(253,250,243,0.08);
+}
+
+.logo{
+    font-family:var(--font-display);
+    font-size:1.4rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-tag{
+    background:var(--meat);
+    color:var(--paper);
+    font-size:0.85rem;
+    font-weight:700;
+    padding:3px 8px;
+    border-radius:3px;
+    letter-spacing:0.04em;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    font-weight:500;
+    font-size:0.95rem;
+    position:relative;
+    transition:color 0.25s;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--meat);
+    transition:width 0.25s;
+}
+
+.nav-links a:hover{
+    color:var(--brass);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-cta{
+    background:var(--bright);
+    color:var(--ink);
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.9rem;
+    padding:10px 18px;
+    border-radius:4px;
+    transition:background 0.25s;
+}
+
+.nav-cta:hover{
+    background:var(--bright-dark);
+    color:var(--paper);
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    padding:140px 6% 80px;
+    background:var(--paper);
+    color:var(--ink);
+}
+
+.hero-text{
+    flex:1;
+    max-width:560px;
+}
+
+.eyebrow{
+    font-size:0.85rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--meat-dark);
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.hero-text h1{
+    font-family:var(--font-display);
+    font-size:4.2rem;
+    line-height:1.08;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:20px;
+    letter-spacing:-0.01em;
+}
+
+.hero-sub{
+    font-size:1.1rem;
+    line-height:1.7;
+    color:rgba(20,23,26,0.72);
+    margin-bottom:30px;
+    max-width:460px;
+}
+
+.info-box{
+    background:rgba(20,23,26,0.04);
+    border:1px solid rgba(20,23,26,0.10);
+    border-left:4px solid var(--meat);
+    border-radius:6px;
+    padding:18px 20px;
+    margin-bottom:32px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    padding:7px 0;
+    font-size:0.95rem;
+    border-bottom:1px solid rgba(20,23,26,0.08);
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-label{
+    color:rgba(20,23,26,0.6);
+    font-weight:500;
+}
+
+.info-value{
+    font-weight:600;
+    text-align:right;
+}
+
+.hero-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:14px 26px;
+    border-radius:5px;
+    transition:transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary{
+    background:var(--meat);
+    color:var(--paper);
+}
+
+.btn-primary:hover{
+    background:var(--meat-dark);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    background:var(--ink);
+    color:var(--paper);
+    border:1.5px solid var(--ink);
+}
+
+.btn-outline:hover{
+    background:var(--meat-dark);
+    border-color:var(--meat-dark);
+    color:var(--paper);
+}
+
+.btn-whatsapp{
+    background:var(--market);
+    color:var(--paper);
+    margin-top:10px;
+    width:100%;
+    text-align:center;
+}
+
+.btn-whatsapp:hover{
+    background:#4a6349;
+}
+
+.hero-image-container{
+    position:relative;
+    width:520px;
+    height:420px;
+    flex-shrink:0;
+}
+
+.big-banner{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+    z-index:0;
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+.small-banner{
+    position:absolute;
+    width:220px;
+    bottom:-24px;
+    left:-24px;
+    border:4px solid var(--paper);
+    border-radius:8px;
+    z-index:1;
+    box-shadow:0 12px 30px rgba(0,0,0,0.5);
+}
+
+.stall-tag{
+    position:absolute;
+    top:-18px;
+    right:-18px;
+    background:var(--brass);
+    color:var(--ink);
+    font-family:var(--font-display);
+    font-size:0.65rem;
+    line-height:1.15;
+    text-align:center;
+    letter-spacing:0.02em;
+    padding:10px 14px;
+    border-radius:50%;
+    width:64px;
+    height:64px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(8deg);
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+    z-index:2;
+}
+
+.stall-tag strong{
+    font-size:1.3rem;
+}
+
+/* ============================================
+   Gallery
+   ============================================ */
+
+.gallery-section{
+    padding:90px 6%;
+    background:var(--paper);
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:14px;
+    font-family:var(--font-display);
+    font-size:2.4rem;
+    font-weight:600;
+    color:var(--ink);
+}
+
+.gallery-section .section-title{
+    margin-bottom:50px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:26px;
+}
+
+.gallery-item{
+    background:white;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 4px 14px rgba(26,20,16,0.06);
+    transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(26,20,16,0.14);
+}
+
+.gallery-item img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+}
+
+.gallery-item h3{
+    text-align:center;
+    padding:16px;
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+}
+
+/* ============================================
+   Contact
+   ============================================ */
+
+.contact{
+    padding:90px 6%;
+    background:var(--paper-dim);
+}
+
+.contact-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.contact-card{
+    position:relative;
+    background:var(--ink);
+    color:var(--paper);
+    padding:44px 40px;
+    border-radius:10px;
+    width:420px;
+    text-align:center;
+}
+
+.contact-card-tag{
+    position:absolute;
+    top:-16px;
+    left:-16px;
+    background:var(--meat);
+    color:var(--paper);
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.1rem;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,0.4);
+}
+
+.contact-card h3{
+    font-family:var(--font-display);
+    color:var(--brass);
+    margin-bottom:24px;
+    font-size:1.4rem;
+}
+
+.contact-card p{
+    margin:14px 0;
+    line-height:1.6;
+}
+
+.contact-card a{
+    text-decoration:underline;
+    text-decoration-color:rgba(253,250,243,0.4);
+}
+
+.map-card{
+    width:420px;
+    height:340px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(26,20,16,0.15);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+footer{
+    background:var(--ink);
+    color:rgba(253,250,243,0.75);
+    text-align:center;
+    padding:30px;
+    font-size:0.9rem;
+}
+
+.footer-sub{
+    margin-top:6px;
+    color:rgba(253,250,243,0.45);
+}
+
+/* ============================================
+   Mobile
+   ============================================ */
+
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:130px 6% 60px;
+    }
+
+    .hero-text{
+        max-width:100%;
+    }
+
+    .hero-sub{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .info-row{
+        font-size:0.9rem;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .hero-image-container{
+        width:100%;
+        max-width:440px;
+        height:340px;
+    }
+
+    .hero-text h1{
+        font-size:3rem;
+    }
+
+    .navbar{
+        flex-wrap:wrap;
+        gap:12px;
+        padding:14px 5%;
+    }
+
+    .nav-links{
+        order:3;
+        width:100%;
+        justify-content:center;
+        gap:18px;
+        flex-wrap:wrap;
+    }
+
+    .chalkboard{
+        padding:26px 22px;
+    }
+
+    .chalk-list li{
+        font-size:1rem;
+    }
+
+    .contact-card, .map-card{
+        width:100%;
+        max-width:420px;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero-text h1{
+        font-size:2.4rem;
+    }
+
+    .stall-tag{
+        width:54px;
+        height:54px;
+        font-size:0.6rem;
+    }
+
+    .stall-tag strong{
+        font-size:1.1rem;
+    }
+}
