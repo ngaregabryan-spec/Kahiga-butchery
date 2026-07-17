@@ -1,20 +1,14 @@
-/* ============================================
-   Kahiga Butchery — Design Tokens
-   Subject: a real working stall in City Market,
-   Nairobi. Palette and marks draw from butcher
-   paper, stamped crate tags, chalk boards and
-   market produce stencils — not steakhouse cliché.
-   ============================================ */
+
 
 :root{
-    --ink:        #14171a;   /* cool near-black, modern neutral */
-    --paper:      #f4f6f7;   /* cool off-white, not warm cream */
+    --ink:        #14171a;  
+    --paper:      #f4f6f7;   
     --paper-dim:  #e9edee;
-    --meat:       #b8392b;   /* dulled stamp-red, not fire-engine */
+    --meat:       #b8392b;   
     --meat-dark:  #8f2c20;
-    --market:     #4f7268;   /* cooled-down crate-stencil green */
-    --brass:      #d4a843;   /* scale-weight gold, used sparingly */
-    --bright:     #ff6b35;   /* saturated accent, used only for the nav CTA */
+    --market:     #4f7268;   
+    --brass:      #d4a843;   
+    --bright:     #ff6b35;   
     --bright-dark:#e0531f;
     --line:       rgba(20,23,26,0.10);
 
@@ -45,9 +39,7 @@ a{ color:inherit; }
     *{ transition:none !important; animation:none !important; }
 }
 
-/* ============================================
-   Navigation
-   ============================================ */
+
 
 .navbar{
     position:fixed;
@@ -132,9 +124,7 @@ a{ color:inherit; }
     color:var(--paper);
 }
 
-/* ============================================
-   Hero
-   ============================================ */
+
 
 .hero{
     min-height:100vh;
@@ -152,14 +142,7 @@ a{ color:inherit; }
     max-width:560px;
 }
 
-.eyebrow{
-    font-size:0.85rem;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--meat-dark);
-    font-weight:600;
-    margin-bottom:18px;
-}
+
 
 .hero-text h1{
     font-family:var(--font-display);
@@ -318,9 +301,7 @@ a{ color:inherit; }
     font-size:1.3rem;
 }
 
-/* ============================================
-   Gallery
-   ============================================ */
+
 
 .gallery-section{
     padding:90px 6%;
@@ -376,9 +357,7 @@ a{ color:inherit; }
     letter-spacing:0.01em;
 }
 
-/* ============================================
-   Contact
-   ============================================ */
+
 
 .contact{
     padding:90px 6%;
@@ -445,9 +424,7 @@ a{ color:inherit; }
     box-shadow:0 10px 30px rgba(26,20,16,0.15);
 }
 
-/* ============================================
-   Footer
-   ============================================ */
+
 
 footer{
     background:var(--ink);
@@ -462,9 +439,7 @@ footer{
     color:rgba(253,250,243,0.45);
 }
 
-/* ============================================
-   Mobile
-   ============================================ */
+
 
 @media(max-width:900px){
 
